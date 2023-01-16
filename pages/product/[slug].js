@@ -30,7 +30,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <div className="samll-images-container">
             {image?.map((item, i) => (
-              <img
+              <img key={i}
                 src={urlFor(item)}
                 className={
                   i === index ? "small-image selected-image" : "small-image"
@@ -86,7 +86,6 @@ const ProductDetails = ({ product, products }) => {
         <h2> You may also like</h2>
         <div className="marquee">
           <div className="maylike-products-container track">
-            {" "}
             {/* copiar estilos de track para otros proyectos, desde el CSS file */}
             {products.map((item) => (
               <Product key={item._id} product={item} />
